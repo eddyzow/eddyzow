@@ -87,14 +87,12 @@ function fitList(text, font, size, maxW) {
 // ------------------------------------------------------------------- svg
 
 const BASE_CSS = `
-@keyframes rise{from{opacity:0;transform:translateY(12px)}}
 @keyframes twinkle{50%{opacity:.2}}
-@keyframes roll{from{transform:translateY(var(--from))}}
+@keyframes roll{to{transform:translateY(var(--to))}}
 @keyframes ping{from{opacity:.7;transform:scale(1)}to{opacity:0;transform:scale(3.2)}}
 @keyframes march{to{stroke-dashoffset:-60}}
-.rise{animation:rise 1s cubic-bezier(.16,1,.3,1) both}
 .tw{animation:twinkle 3s ease-in-out infinite}
-.roll{animation:roll 1.9s cubic-bezier(.16,1,.3,1) both}
+.roll{animation:roll 1.9s cubic-bezier(.16,1,.3,1)}
 .ping{transform-box:fill-box;transform-origin:center;animation:ping 2.4s cubic-bezier(.16,1,.3,1) infinite}
 .march{animation:march 5s linear infinite}
 @media (prefers-reduced-motion:reduce){*{animation:none!important}}`;
@@ -161,8 +159,8 @@ function nebula(blobs) {
 <g filter="url(#paint)">${blobs.map(([cx, cy, rx, ry, color, o]) => `<ellipse cx="${cx}" cy="${cy}" rx="${rx}" ry="${ry}" fill="${color}" opacity="${o}"/>`).join("")}</g>`;
 }
 
-// Digits roll up into place. The resting state is the real number, so a
-// viewer that skips CSS animation still shows the right figure.
+// Each digit spins one full turn and lands back on itself. Frame zero is the
+// real number, so a viewer that snapshots without animating still reads it.
 function odometer(value, x, y, size, delay, id) {
   const dw = (METRICS.serif.tnum / METRICS.serif.upm) * size;
   const lh = size * 1.15;
@@ -175,9 +173,8 @@ function odometer(value, x, y, size, delay, id) {
       return;
     }
     const d = Number(ch);
-    const spin = 10 + d; // one full turn, then on to the digit
-    const tspans = Array.from({ length: spin + 1 }, (_, j) => `<tspan x="${f1(cx)}" y="${f1(y - j * lh)}">${(d - j + 20) % 10}</tspan>`).join("");
-    cols += `<text class="roll" style="--from:${f1(spin * lh)}px;animation-delay:${(delay + k * 0.07).toFixed(2)}s">${tspans}</text>`;
+    const tspans = Array.from({ length: 11 }, (_, j) => `<tspan x="${f1(cx)}" y="${f1(y + j * lh)}">${(d + j) % 10}</tspan>`).join("");
+    cols += `<text class="roll" style="--to:${f1(-10 * lh)}px;animation-delay:${(delay + k * 0.07).toFixed(2)}s">${tspans}</text>`;
     cx += dw;
   });
   return `<clipPath id="${id}"><rect x="${f1(x - 4)}" y="${f1(y - size)}" width="${f1(cx - x + 8)}" height="${f1(size * 1.25)}"/></clipPath>
@@ -226,7 +223,7 @@ ${[[ax, ay], [bx, by]].map(([x, y]) => `<circle cx="${f1(x)}" cy="${f1(y)}" r="3
 <pattern id="hatch" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(135)"><path d="M0 0V5" stroke="${C.ink}" stroke-width="1.4"/></pattern>
 <mask id="night"><rect x="${cx - R}" y="${cy - R}" width="${2 * R}" height="${2 * R}" fill="#fff"/><circle cx="${f1(cx - R * 0.3)}" cy="${f1(cy - R * 0.34)}" r="${f1(R * 1.12)}" fill="#000"/></mask>
 </defs>
-<g class="pop">
+<g>
 ${moon("back")}
 <circle cx="${cx}" cy="${cy}" r="${R + 16}" fill="url(#atmo)"/>
 <g clip-path="url(#globe)">
@@ -257,9 +254,9 @@ ${nebula([[700, 80, 220, 120, "#6b4dff", 0.5], [540, 260, 170, 90, "#ff5fa8", 0.
 ${starfield(rng(7), 130, fw, fh)}
 ${planet(cx, cy, R)}
 </g>
-<text class="serif rise" x="46" y="142" font-size="86" letter-spacing="-2.6" fill="${C.fg}" style="animation-delay:.1s">Eddy <tspan class="italic">Zhao</tspan></text>
-<text class="sans rise" x="49" y="186" font-size="18.5" fill="${C.soft}" style="animation-delay:.25s">Astrophysics &amp; Computer Science at UC Berkeley.</text>
-<g class="rise" style="animation-delay:.4s">
+<text class="serif" x="46" y="142" font-size="86" letter-spacing="-2.6" fill="${C.fg}">Eddy <tspan class="italic">Zhao</tspan></text>
+<text class="sans" x="49" y="186" font-size="18.5" fill="${C.soft}">Astrophysics &amp; Computer Science at UC Berkeley.</text>
+<g>
 <rect x="48" y="214" width="${f1(tw + 54)}" height="32" rx="16" fill="${C.elev}" stroke="${C.line}"/>
 <circle class="ping" cx="67" cy="230" r="4" fill="${C.accent}"/><circle cx="67" cy="230" r="4" fill="${C.accent}"/>
 <text class="mono" x="81" y="234.2" font-size="12" fill="${C.soft}">${esc(status)}</text>
@@ -267,10 +264,8 @@ ${planet(cx, cy, R)}
 ${hairline(fw, fh)}`;
   const css = `
 @keyframes spin{to{transform:translateX(${MW}px)}}
-@keyframes pop{from{opacity:0;transform:scale(.82)}}
 .spin{animation:spin 70s linear infinite}
-.drift{animation:spin 40s linear infinite}
-.pop{transform-origin:${cx}px ${cy}px;animation:pop 1.3s cubic-bezier(.34,1.56,.64,1) both}`;
+.drift{animation:spin 40s linear infinite}`;
   return svg(fw + SHADOW, fh + SHADOW, "Eddy Zhao. Astrophysics & Computer Science at UC Berkeley.", body, css);
 }
 
@@ -342,7 +337,7 @@ function sky(s, stamp) {
 ${nebula([[620, 170, 260, 70, "#6b4dff", 0.28], [160, 230, 200, 50, "#38c6c0", 0.1]])}
 <g transform="translate(${X + 140} ${Y - 26}) rotate(22)"><g class="shoot"><rect width="90" height="1.6" rx=".8" fill="url(#trail)"/><circle cx="90" cy=".8" r="1.7" fill="#fff"/></g></g>
 </g>
-<text class="serif rise" x="${X}" y="62" font-size="32" letter-spacing="-.8" fill="${C.fg}">A year <tspan class="italic">in stars</tspan></text>
+<text class="serif" x="${X}" y="62" font-size="32" letter-spacing="-.8" fill="${C.fg}">A year <tspan class="italic">in stars</tspan></text>
 <text class="mono" x="${fw - X}" y="50" text-anchor="end" font-size="10.5" letter-spacing="1.2" fill="${C.muted}">UPDATED ${esc(stamp)}</text>
 <path d="${glint(fw - X - bestW - 9, 64.5, 5.5)}" fill="${C.accent}"/>
 <text class="mono" x="${fw - X}" y="68" text-anchor="end" font-size="10.5" letter-spacing="1.2" fill="${C.accent}">${esc(best)}</text>
