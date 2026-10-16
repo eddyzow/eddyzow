@@ -22,7 +22,7 @@
 </g>
 <path d="M3 196H409" stroke="#04031a" stroke-width="3"/>
 
-<text class="mono" x="388" y="238" text-anchor="end" font-size="10.5" fill="#9894c4">2026 · 1 star · updated 2mo ago</text>
+<text class="mono" x="388" y="238" text-anchor="end" font-size="10.5" fill="#9894c4">2026 · 1 star · updated 3mo ago</text>
 <text class="serif" x="24" y="240" font-size="27" letter-spacing="-.5" fill="#f3f0ff">Cube Wars</text>
 <text class="sans" font-size="13.5" fill="#cdc9ee"><tspan x="24" y="268">Real-time multiplayer arena fighter. 1v1 first-to-3 duels on</tspan><tspan x="24" y="288">an authoritative 32-tick server with client-side prediction,</tspan><tspan x="24" y="308">a ranked ladder, custom rooms, and live matchmaking.</tspan></text>
 <text class="mono" x="24" y="336.7" font-size="10.5" fill="#9894c4">Pixi.js · Socket.IO · Node</text>
