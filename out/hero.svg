@@ -62,9 +62,9 @@
 <text class="serif" x="46" y="142" font-size="86" letter-spacing="-2.6" fill="#f3f0ff">Eddy <tspan class="italic">Zhao</tspan></text>
 <text class="sans" x="49" y="186" font-size="18.5" fill="#cdc9ee">Astrophysics &amp; Computer Science at UC Berkeley.</text>
 <g>
-<rect x="48" y="214" width="450" height="32" rx="16" fill="#16143c" stroke="rgba(190,188,255,0.22)"/>
+<rect x="48" y="214" width="421.2" height="32" rx="16" fill="#16143c" stroke="rgba(190,188,255,0.22)"/>
 <circle class="ping" cx="67" cy="230" r="4" fill="#ffb45e"/><circle cx="67" cy="230" r="4" fill="#ffb45e"/>
-<text class="mono" x="81" y="234.2" font-size="12" fill="#cdc9ee">Active yesterday · 1,064 contributions in the past year</text>
+<text class="mono" x="81" y="234.2" font-size="12" fill="#cdc9ee">Active today · 1,086 contributions in the past year</text>
 </g>
 <rect x="4.5" y="4.5" width="831" height="291" rx="15.5" stroke="rgba(190,188,255,0.22)"/>
 </svg>
