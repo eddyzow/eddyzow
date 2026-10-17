@@ -23,7 +23,7 @@
 <path d="M3 196H409" stroke="#04031a" stroke-width="3"/>
 <rect x="16" y="156" width="99.6" height="24" rx="12" fill="#0a0920" stroke="#04031a" stroke-width="2"/>
 <text class="mono" x="28" y="171.7" font-size="10.5" fill="#f3f0ff">HackMIT 2026</text>
-<text class="mono" x="388" y="238" text-anchor="end" font-size="10.5" fill="#9894c4">2026 · 1 star · updated 26d ago</text>
+<text class="mono" x="388" y="238" text-anchor="end" font-size="10.5" fill="#9894c4">2026 · 1 star · updated 27d ago</text>
 <text class="serif" x="24" y="240" font-size="27" letter-spacing="-.5" fill="#f3f0ff">Mechanica</text>
 <text class="sans" font-size="13.5" fill="#cdc9ee"><tspan x="24" y="268">Parts counter for motorcycle repair. Search 27k vehicles</tspan><tspan x="24" y="288">or snap a photo to identify a part, confirm it against the</tspan><tspan x="24" y="308">service manual, pick it in a 3D viewer, and book the job.</tspan></text>
 <text class="mono" x="24" y="336.7" font-size="10.5" fill="#9894c4">JS · FastAPI</text>
