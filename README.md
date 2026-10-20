@@ -3,7 +3,7 @@
 
 <a href="https://eddyzow.net/"><img src="out/hero.svg" width="100%" alt="Eddy Zhao. Astrophysics &#38; Computer Science at UC Berkeley."></a>
 
-<img src="out/sky.svg" width="100%" alt="1,595 contributions in the past year. Current streak 15 days, longest 19, 185 active days.">
+<img src="out/sky.svg" width="100%" alt="1,642 contributions in the past year. Current streak 15 days, longest 19, 185 active days.">
 
 <img src="out/projects.svg" width="100%" alt="Projects">
 
