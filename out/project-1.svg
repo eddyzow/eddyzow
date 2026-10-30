@@ -23,7 +23,7 @@
 <path d="M3 196H409" stroke="#04031a" stroke-width="3"/>
 <rect x="16" y="156" width="112.2" height="24" rx="12" fill="#0a0920" stroke="#04031a" stroke-width="2"/>
 <text class="mono" x="28" y="171.7" font-size="10.5" fill="#f3f0ff">Cal Hacks 13.0</text>
-<text class="mono" x="388" y="238" text-anchor="end" font-size="10.5" fill="#9894c4">2026 · updated 4d ago</text>
+<text class="mono" x="388" y="238" text-anchor="end" font-size="10.5" fill="#9894c4">2026 · updated 5d ago</text>
 <text class="serif" x="24" y="240" font-size="27" letter-spacing="-.5" fill="#f3f0ff">Kite</text>
 <text class="sans" font-size="13.5" fill="#cdc9ee"><tspan x="24" y="268">A drone guide dog for blind walkers. It flies with you and</tspan><tspan x="24" y="288">warns you about obstacles before you reach them.</tspan></text>
 <text class="mono" x="24" y="336.7" font-size="10.5" fill="#9894c4">Python · Rust</text>
