@@ -3,11 +3,11 @@
 
 <a href="https://eddyzow.net/"><img src="out/hero.svg" width="100%" alt="Eddy Zhao. Astrophysics &#38; Computer Science at UC Berkeley."></a>
 
-<img src="out/sky.svg" width="100%" alt="4,522 contributions in the past year. Current streak 2 days, longest 19, 180 active days.">
+<img src="out/sky.svg" width="100%" alt="4,780 contributions in the past year. Current streak 3 days, longest 19, 181 active days.">
 
 <img src="out/projects.svg" width="100%" alt="Projects">
 
-<a href="https://tryfrankenstein.pages.dev/"><img src="out/project-1.svg" width="49%" alt="Frankenstein: AI agents rewrite a game&#39;s lost source code from the cartridge, and a compiler keeps a piece only if it matches the original byte for byte. On Doom, 235 pieces came back and the rebuilt game is identical."></a> <a href="https://devpost.com/software/kite-od2vmu"><img src="out/project-2.svg" width="49%" alt="Kite: A drone guide dog for blind walkers. It flies with you and warns you about obstacles before you reach them."></a>
+<a href="https://tryfrankenstein.pages.dev/play/"><img src="out/project-1.svg" width="49%" alt="Frankenstein: AI agents decompile a retro game&#39;s binary back into readable source code, and a compiler verifies every piece byte for byte. We reverse-engineered 235 functions of DOOM (1993), and you can play it in your phone&#39;s browser."></a> <a href="https://devpost.com/software/kite-od2vmu"><img src="out/project-2.svg" width="49%" alt="Kite: A drone guide dog for blind walkers. It flies with you and warns you about obstacles before you reach them."></a>
 
 <a href="https://tryplatypus.pages.dev/"><img src="out/project-3.svg" width="49%" alt="Platypus: Makes phone-only businesses bookable by AI agents. One disclosed AI call books a real job mid-call and asks the owner to take texts; after that, every agent books the shop by text and the owner replies with a simple “yes”."></a> <a href="https://eddyzow.net/rips/"><img src="out/project-4.svg" width="49%" alt="FreeRips: Pokémon pack ripping simulator. Slice the foil on a 3D booster, watch the rarity roulette spin, and reveal a graded card at its real market value. 14 packs, 6,400 real cards, published odds, and free play coins only."></a>
 
